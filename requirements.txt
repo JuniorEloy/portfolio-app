@@ -14,3 +14,4 @@ Werkzeug==1.0.1
 wrapt==1.12.1
 uWSGI==2.0.18
 WTForms==2.3.3
+pytest==6.1.1
