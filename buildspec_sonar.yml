@@ -27,7 +27,7 @@ phases:
             -Dsonar.host.url=${HOST} 
             -Dsonar.projectKey=${Project} 
             -Dsonar.organization=${Organization}  
-            -Dsonar.exclusions=sonar-scanner-3.3.0.1492-linux//*
+            -Dsonar.exclusions=sonar-scanner-3.3.0.1492-linux/**
         - sleep 5
         - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=${Project} > result.json
         - cat result.json
