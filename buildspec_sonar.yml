@@ -11,13 +11,11 @@ phases:
     install:
        runtime-versions:
            python: 3.8
-        commands:
-        - apt-get update
-        - apt-get install -y jq
 
     pre_build:
         commands:
-        - pip install -r requirements.txt
+        - apt-get update
+        - apt-get install -y jq
         - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip
         - unzip ./sonar-scanner-cli-4.5.0.2216-linux.zip
         - export PATH=$PATH:./sonar-scanner-4.5.0.2216-linux/bin/
