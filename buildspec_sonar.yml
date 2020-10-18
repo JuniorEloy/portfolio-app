@@ -8,17 +8,14 @@ env:
         Project: sonar_project
 
 phases:
-    install:
-       runtime-versions:
-           python: 3.8
 
     pre_build:
         commands:
         - apt-get update
         - apt-get install -y jq
         - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip
-        - unzip ../sonar-scanner-cli-4.5.0.2216-linux.zip
-        - export PATH=$PATH:../sonar-scanner-3.3.0.1492-linux/bin/
+        - unzip ./sonar-scanner-cli-4.5.0.2216-linux.zip -d /usr/sonar
+        - export PATH=/usr/sonar/sonar-scanner-3.3.0.1492-linux/bin/
     
     build:
         commands:
