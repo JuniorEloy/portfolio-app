@@ -3,7 +3,7 @@ from app.routes import init_routes
 
 import unittest
 
-class Login_statusCode200(unittest.TestCase):
+class Login_status_code200(unittest.TestCase):
     def setUp(self) -> None:
         #instancia app
         self.app = application()
