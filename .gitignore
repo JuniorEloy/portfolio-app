@@ -5,3 +5,7 @@ venv
 *.pytest*
 .coverage
 coverage.xml
+sonar-scanner-*
+.scannerwork
+coverage-reports
+nosetests.xml
