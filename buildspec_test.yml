@@ -15,12 +15,7 @@ phases:
 
     build:
       commands:
-        - pytest tests/unit/
-        - pytest tests/integration/ -rfs
-
-    post_build:
-      commands:
-        - python setup.py sdist bdist_wheel
+        - pytest --cov --cov-report=xml:$TEST_COV_NAME
 
 artifacts:
     files:
