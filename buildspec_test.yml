@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+    variables:
+        TEST_COV_NAME: coverage.xml
+
+phases:
+    install:
+      runtime-versions:
+         python: 3.8
+
+    pre_build:
+      commands:
+        - pip install -r requirements.txt
+
+    build:
+      commands:
+        - pytest tests/unit/
+        - pytest tests/integration/ -rfs
+
+    post_build:
+      commands:
+        - python setup.py sdist bdist_wheel
+
+artifacts:
+    files:
+        - $TEST_COV_NAME
