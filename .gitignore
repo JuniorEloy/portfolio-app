@@ -3,7 +3,7 @@ venv
 *.pyc
 *.vscode
 *.pytest*
-.coverage
+.coverage*
 coverage*.xml
 sonar-scanner-*
 .scannerwork
