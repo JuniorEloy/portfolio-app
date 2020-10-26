@@ -2,9 +2,10 @@
 
 DOCKERHUB_LOGIN=`aws ssm get-parameters --names docker_hub_username --query "Parameters[*].Value" --output text`
 DOCKERHUB_PASSWORD=`aws ssm get-parameters --with-decrypt --names docker_hub_password --query "Parameters[*].Value" --output text`
+DOCKERHUB_VERSION=`aws ssm get-parameters --names docker_hub_version --query "Parameters[*].Value" --output text` 
 
 docker login -u $DOCKERHUB_LOGIN -p $DOCKERHUB_PASSWORD
 
-docker pull $DOCKERHUB_LOGIN/portfolio-app:Latest
+docker pull $DOCKERHUB_LOGIN/portfolio-app:$DOCKERHUB_VERSION
 
 docker logout

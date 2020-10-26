@@ -25,4 +25,4 @@ phases:
         - echo Pushing the Docker image...
         - docker push ${DOCKER_HUB_USERNAME}/$IMAGE_REPO_NAME:${CODEBUILD_BUILD_NUMBER}
         - docker logout
-        - aws ssm put-parameter --name "docker_hub_version" --value "${CODEBUILD_BUILD_NUMBER}"
+        - aws ssm put-parameter --name "docker_hub_version" --value "${CODEBUILD_BUILD_NUMBER}" --overwrite

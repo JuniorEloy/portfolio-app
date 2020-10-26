@@ -1,10 +1,6 @@
 version: 0.0
 os: linux
 
-files:
-  - source: docker/middleman_docker_image.tar.gz
-    destination: /tmp
-
 hooks:
     BeforeInstall:
         - location: scripts/pull_image_dockerhub.sh
@@ -14,11 +10,11 @@ hooks:
         - location: scripts/kill_container.sh
         timeout: 20
         runas: ec2-user
-    AfterInstall:
-        - location: scripts/load_image.sh
+    ApplicationStart:
+        - location: scripts/run_container.sh
         timeout: 10
         runas: ec2-user
-    ApplicationStart:
-        - location: scripts/start_container.sh
+    AfterInstall:
+        - location: scripts/clean-up.sh
         timeout: 10
         runas: ec2-user

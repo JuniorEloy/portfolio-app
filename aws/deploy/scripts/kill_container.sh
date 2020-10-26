@@ -2,4 +2,5 @@
 
 set -e
 
-docker rm -f middleman || true
+docker stop portfolio-app
+docker rm portfolio-app
