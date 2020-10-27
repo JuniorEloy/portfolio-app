@@ -9,7 +9,7 @@ hooks:
     - location: aws/deploy/scripts/kill_container.sh
       timeout: 20
       runas: ec2-user
-  Install:
+  ApplicationStart:
     - location: aws/deploy/scripts/run_container.sh
       timeout: 20
       runas: ec2-user
