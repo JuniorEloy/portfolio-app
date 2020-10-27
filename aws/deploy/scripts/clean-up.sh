@@ -2,4 +2,4 @@
 
 set -e
 
-docker system prune -a -y
+docker system prune -a -f

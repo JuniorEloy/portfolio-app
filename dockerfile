@@ -6,9 +6,12 @@ RUN apk add python3-dev \
 
 WORKDIR /
 COPY /app /app
+COPY /static /static
+COPY /templates /templates
 COPY ./requirements.txt /
 COPY ./wsgi.ini /
 COPY ./wsgi.py /
+COPY ./server.py /
 
 RUN pip install -r /requirements.txt
 
