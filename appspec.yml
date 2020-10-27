@@ -2,15 +2,15 @@ version: 0.0
 os: linux
 
 hooks:
-    BeforeInstall:
+    DownloadBundle:
         - location: aws/deploy/scripts/pull_image_dockerhub.sh
         timeout: 200
         runas: ec2-user
-    ApplicationStop:
+    BeforeInstall:
         - location: aws/deploy/scripts/kill_container.sh
         timeout: 20
         runas: ec2-user
-    ApplicationStart:
+    Install:
         - location: aws/deploy/scripts/run_container.sh
         timeout: 10
         runas: ec2-user
