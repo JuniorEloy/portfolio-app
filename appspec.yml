@@ -13,7 +13,3 @@ hooks:
     - location: aws/deploy/scripts/run_container.sh
       timeout: 20
       runas: ec2-user
-  AfterInstall:
-    - location: aws/deploy/scripts/clean-up.sh
-      timeout: 20
-      runas: ec2-user
