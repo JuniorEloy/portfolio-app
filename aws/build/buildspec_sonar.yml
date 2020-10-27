@@ -25,7 +25,7 @@ phases:
             -Dsonar.projectKey=${Project} 
             -Dsonar.organization=${Organization}  
             -Dsonar.exclusions=sonar-scanner-4.5.0.2216-linux/*
-        - sleep 5
+        - sleep 10
         - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=${Project} > result.json
         - cat result.json
         - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
