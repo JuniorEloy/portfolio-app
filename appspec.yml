@@ -3,18 +3,18 @@ os: linux
 
 hooks:
     BeforeInstall:
-        - location: scripts/pull_image_dockerhub.sh
+        - location: aws/deploy/scripts/pull_image_dockerhub.sh
         timeout: 200
         runas: ec2-user
     ApplicationStop:
-        - location: scripts/kill_container.sh
+        - location: aws/deploy/scripts/kill_container.sh
         timeout: 20
         runas: ec2-user
     ApplicationStart:
-        - location: scripts/run_container.sh
+        - location: aws/deploy/scripts/run_container.sh
         timeout: 10
         runas: ec2-user
     AfterInstall:
-        - location: scripts/clean-up.sh
+        - location: aws/deploy/scripts/clean-up.sh
         timeout: 10
         runas: ec2-user
